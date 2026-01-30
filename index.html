@@ -113,76 +113,51 @@
             margin-bottom: 5px;
         }
 
-        /* --- PORTFOLIO SECTION (STYLE CAROUSEL CAPTION) --- */
+        /* --- PORTFOLIO SECTION (CAROUSEL STYLE) --- */
         
-        /* Filter Button Styling */
-        .portfolio-filter button {
-            background: none; /* Menghilangkan background default tombol */
-            border: 1px solid #ddd; /* Garis tepi tipis berwarna abu-abu */
-            padding: 8px 20px; /* Jarak dalam tombol (atas-bawah 8px, kiri-kanan 20px) */
-            border-radius: 20px; /* Membuat tombol berbentuk lonjong (pil) */
-            margin: 5px; /* Jarak antar tombol */
-            font-weight: 500; /* Ketebalan huruf sedang */
-            transition: all 0.3s ease; /* Efek transisi halus saat berubah warna */
+        /* Mengatur ukuran gambar slider agar seragam */
+        .carousel-item img {
+            height: 500px; /* Tinggi tetap 500px (bisa diubah sesuai selera) */
+            object-fit: cover; /* Gambar dipotong rapi agar memenuhi kotak (tidak gepeng) */
+            filter: brightness(0.8); /* Sedikit menggelapkan gambar agar tulisan putih terbaca jelas */
         }
 
-        /* Efek saat tombol aktif atau di-hover (disorot mouse) */
-        .portfolio-filter button.active, 
-        .portfolio-filter button:hover {
-            background-color: var(--primary-orange); /* Warna background jadi oranye */
-            color: white; /* Warna teks jadi putih */
-            border-color: var(--primary-orange); /* Warna garis tepi jadi oranye */
+        /* Style untuk Caption (Tulisan di atas gambar) */
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5); /* Latar belakang hitam transparan di belakang teks */
+            padding: 20px; /* Jarak tulisan dari tepi kotak hitam */
+            border-radius: 10px; /* Membulatkan sudut kotak hitam */
+            bottom: 50px; /* Posisi caption agak naik ke atas dari bawah */
         }
 
-        /* Container Kartu Portofolio */
-        .portfolio-card {
-            position: relative; /* Wajib! Menjadi acuan posisi untuk caption di dalamnya */
-            overflow: hidden; /* Memotong gambar/caption yang keluar dari batas kotak */
-            border-radius: 15px; /* Melengkungkan sudut kartu sebesar 15px */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Memberi bayangan hitam transparan (efek timbul) */
-            cursor: pointer; /* Mengubah kursor jadi telunjuk saat diarahkan */
-        }
-
-        /* Gambar di dalam kartu */
-        .portfolio-card img {
-            width: 100%; /* Lebar gambar mengikuti lebar kolom (responsif) */
-            height: 300px; /* Tinggi gambar dipaksa 300px agar semua kartu seragam */
-            object-fit: cover; /* Memotong gambar agar pas memenuhi kotak tanpa gepeng */
-            transition: transform 0.5s ease; /* Transisi halus untuk efek zoom */
-            display: block; /* Menghilangkan celah putih default di bawah gambar inline */
-        }
-
-        /* Efek saat kartu disorot mouse (Hover) */
-        .portfolio-card:hover img {
-            transform: scale(1.1); /* Memperbesar gambar 110% (efek zoom in) */
-        }
-
-        /* Caption (Teks di atas gambar) - Style Carousel Caption */
-        .portfolio-caption {
-            position: absolute; /* Posisi bebas (mengapung) di atas gambar */
-            bottom: 0; /* Menempel di bagian bawah kartu */
-            left: 0; /* Mulai dari sisi kiri mentok */
-            right: 0; /* Sampai sisi kanan mentok (lebar penuh) */
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); /* Gradasi hitam ke transparan agar teks terbaca jelas */
-            color: white; /* Warna teks putih */
-            padding: 30px 20px 20px 20px; /* Jarak dalam (atas lebih besar untuk area gradasi) */
-            text-align: center; /* Teks rata tengah */
-            transform: translateY(0); /* Posisi normal (bisa diubah jika ingin efek slide up) */
-            transition: all 0.3s ease; /* Transisi halus jika ada perubahan properti */
-        }
-
-        /* Judul Proyek */
-        .portfolio-caption h5 {
+        /* Judul Proyek di dalam Carousel */
+        .carousel-caption h5 {
             font-weight: 700; /* Menebalkan huruf judul */
-            margin-bottom: 5px; /* Jarak bawah antara judul dan kategori */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Bayangan teks agar kontras dengan foto terang */
+            font-size: 1.5rem; /* Ukuran font judul */
+            color: var(--primary-orange); /* Memberi aksen warna orange */
         }
 
-        /* Kategori Proyek (Teks kecil) */
-        .portfolio-caption p {
-            font-size: 0.9rem; /* Ukuran font sedikit lebih kecil */
-            opacity: 0.9; /* Sedikit transparan (90%) */
-            margin-bottom: 0; /* Menghilangkan margin bawah default */
+        /* Deskripsi Proyek */
+        .carousel-caption p {
+            font-size: 1rem; /* Ukuran font deskripsi */
+            color: white; /* Warna putih */
+        }
+
+        /* Responsif untuk Layar HP (Mobile) */
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 300px; /* Di HP, tinggi gambar diperkecil jadi 300px */
+            }
+            .carousel-caption {
+                padding: 10px; /* Padding lebih kecil di HP */
+                bottom: 20px; /* Posisi lebih rendah di HP */
+            }
+            .carousel-caption h5 {
+                font-size: 1.2rem; /* Font judul lebih kecil di HP */
+            }
+            .carousel-caption p {
+                font-size: 0.9rem; /* Font deskripsi lebih kecil di HP */
+            }
         }
 
         /* Responsiveness adjustments */
@@ -305,51 +280,62 @@
     </section>
 
     <section id="portfolio" class="py-5">
+        <section id="portfolio" class="py-5">
         <div class="container">
             <div class="section-title">
                 <h2>My Projects</h2>
-                <p class="text-muted">Beberapa hasil karya terbaik saya</p>
+                <p class="text-muted">Geser untuk melihat hasil karya saya</p>
             </div>
 
-            <div class="text-center mb-5 portfolio-filter">
-                <button class="active">All</button>
-                <button>UI/UX</button>
-                <button>Web Design</button>
-                <button>App Design</button>
+            <div id="portfolioCarousel" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
+                
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    
+                    <div class="carousel-item active" data-bs-interval="5000"> <img src="https://via.placeholder.com/1200x500" class="d-block w-100" alt="Proyek Website 1">
+                        <div class="carousel-caption d-none d-md-block"> <h5>Proyek Website E-Commerce</h5>
+                            <p>Desain website toko online lengkap dengan fitur keranjang belanja.</p>
+                        </div>
+                        <div class="carousel-caption d-block d-md-none"> 
+                            <h5>Web E-Commerce</h5>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="https://via.placeholder.com/1200x500" class="d-block w-100" alt="Aplikasi Mobile">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Aplikasi Absensi Mobile</h5>
+                            <p>Aplikasi android untuk sistem absensi karyawan berbasis GPS.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="https://via.placeholder.com/1200x500" class="d-block w-100" alt="Sistem Informasi">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Sistem Informasi Sekolah</h5>
+                            <p>Dashboard admin untuk pengelolaan data siswa dan guru.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                
+                <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-
-            <div class="row g-4">
-                <div class="col-md-4 col-sm-6"> <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 1">
-                        
-                        <div class="portfolio-caption">
-                            <h5>Proyek Website 1</h5>
-                            <p>Web Design</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 2">
-                        <div class="portfolio-caption">
-                            <h5>Aplikasi Mobile</h5>
-                            <p>App Design</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x300" alt="Project 3">
-                        <div class="portfolio-caption">
-                            <h5>Sistem Informasi</h5>
-                            <p>Backend Dev</p>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
+    </section>
     </section>
 
     <footer class="text-center py-4 bg-white border-top">
