@@ -1,0 +1,144 @@
+/* --- UNIVERSAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Menghitung padding dalam lebar elemen */
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f0f4f8; /* Warna latar belakang abu kebiruan lembut */
+    padding: 20px;
+}
+
+/* --- NAVBAR (GRID) --- */
+.navbar {
+    display: flex; /* Menggunakan flexbox agar item bisa ke kiri & kanan */
+    justify-content: space-between;
+    background-color: #1e5bb8; /* Biru seperti pada gambar */
+    padding: 15px 30px;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* --- HERO SECTION (GRID) --- */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi 2 kolom sama besar (Desktop) */
+    gap: 20px;
+    background: white;
+    padding: 50px;
+    align-items: center; /* Teks & gambar sejajar di tengah secara vertikal */
+}
+
+.hero-content h1 { color: #333; margin-bottom: 15px; }
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.hero-image img {
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- ABOUT SECTION (GRID) --- */
+.about-section {
+    text-align: center;
+    background: white;
+    padding: 40px 20px;
+    margin-top: 2px;
+}
+
+.about-section h2 { color: #007bff; }
+
+.grid-about {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom di Desktop */
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.box {
+    background: #f8f9fa;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* --- PORTOFOLIO SECTION (GRID) --- */
+.portfolio-section {
+    background: white;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+}
+
+.grid-portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom kartu di Desktop */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); } /* Efek angkat saat mouse lewat */
+
+.card img { width: 100%; border-radius: 10px; }
+
+/* --- FOOTER --- */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e5bb8;
+    color: white;
+    margin-top: 20px;
+}
+
+/* --- RESPONSIVE LAYOUT (Media Queries) --- */
+
+/* TABLET (Layar dibawah 992px) */
+@media (max-width: 992px) {
+    .grid-about {
+        grid-template-columns: repeat(2, 1fr); /* Berubah jadi 2 kolom */
+    }
+}
+
+/* HANDPHONE (Layar dibawah 600px) */
+@media (max-width: 600px) {
+    .hero-section, 
+    .grid-about, 
+    .grid-portfolio {
+        grid-template-columns: 1fr; /* Semua tumpukan menjadi 1 kolom saja */
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .hero-section {
+        text-align: center;
+    }
+}

@@ -1,87 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Website Tabel Sederhana</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portofolio  | Programmer & Web Developer</title>
+    <meta name="description" content="Portofolio resmi Naufal Hidayat. S1 Hukum dan Ekonomi Islam. Lihat karya, keahlian, dan hubungi saya untuk kolaborasi.">
+    <meta name="keywords" content="Naufal Hidayat, Programmer, Web Developer, Bogor, Portofolio, HTML, CSS">
+    <meta name="author" content="Naufal Hidayat">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portofolio Naufal Hidayat - Programmer">
+    <meta property="og:description" content="Halo, saya Naufal Hidayat. Cek portofolio dan proyek terbaru saya di sini.">
+    <meta property="og:url" content="https://www.websitenaufal.com/">
+    <meta property="og:image" content="https://www.websitenaufal.com/assets/thumbnail-share.jpg">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <meta name="theme-color" content="#1e5bb8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Tugas_1.css">
 </head>
 <body>
 
 <!-- SECTION 1 : MENU -->
-<table border="1" width="100%">
-    <tr>
-        <td align="center"><a href="#">Header</a></td>
-        <td align="center"><a href="#">Biodata</a></td>
-        <td align="center"><a href="#">Portfolio</a></td>
-    </tr>
-</table>
 
-<br>
+<nav class="navbar">
+    <div class="brand">Brand</div>
+    <div class="menu">
+        <a href="#">Header</a>
+        <a href="#">Biodata</a>
+        <a href="#">Portfolio</a>
+    </div>
+</nav>
 
 <!-- SECTION 2 : JUDUL KIRI - GAMBAR KANAN -->
-<table border="1" width="100%">
-    <tr>
-        <td width="60%">
-            <h1>Selamat Datang di Website Saya</h1>
-            <p>
-                Ini adalah contoh header dengan dua kolom di sebelah kiri,
-                berisi teks seperti ini
-            </p>
-            <button>Pelajari Lebih Lanjut</button>
-        </td>
-        <td width="40%" align="center">
-            <img src="https://via.placeholder.com/200" alt="gambar">
-        </td>
-    </tr>
-</table>
-
-<br>
+<header class="hero-section">
+    <div class="hero-content">
+        <h1>Selamat Datang di Website Saya</h1>
+        <p>Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks seperti ini.</p>
+        <button class="btn-primary">Pelajari Lebih Lanjut</button>
+    </div>
+    <div class="hero-image">
+        <img src="Me.jpeg" alt="Profile">
+    </div>
+</header>
 
 <!-- SECTION 3 : BIODATA 6 BOX -->
-<table border="1" width="100%">
-    <tr>
-        <td colspan="3" align="center">
-            <h2>About me</h2>
-            <p>A brief introduction about my self</p>
-        </td>
-    </tr>
-    <tr>
-        <td align="center">Full Name</td>
-        <td align="center">Education</td>
-        <td align="center">Pekerjaan</td>
-    </tr>
-    <tr>
-        <td align="center">Contact</td>
-        <td align="center">Hobi</td>
-        <td align="center">Alamat</td>
-    </tr>
-</table>
-
-<br>
+<section class="about-section">
+    <h2>About Me</h2>
+    <p class="subtitle">A brief introduction about myself</p>
+    <div class="grid-about">
+        <div class="box"><strong>Full Name:</strong> Naufal Hidayat</div>
+        <div class="box"><strong>Education:</strong> S1 Hukum dan Ekonomi Islam</div>
+        <div class="box"><strong>Pekerjaan:</strong> Programmer</div>
+        <div class="box"><strong>Contact:</strong> naufalhidayat@gmail.com</div>
+        <div class="box"><strong>Hobi:</strong> Membaca, Coding, gaming, watching film</div>
+        <div class="box"><strong>Alamat:</strong> Bogor</div>
+    </div>
+</section>
 
 <!-- SECTION 4 : PORTOFOLIO -->
-<table border="1" width="100%">
-    <tr>
-        <td colspan="3" align="center">
-            <h2>Portofolio</h2>
-        </td>
-    </tr>
-    <tr>
-        <td align="center">
-            <img src="https://via.placeholder.com/150" alt="project 1"><br>
-            <h3>Project 1</h3>
-            <p>Deskripsi proyek 1</p>
-        </td>
-        <td align="center">
-            <img src="https://via.placeholder.com/150" alt="project 2"><br>
-            <h3>Project 2</h3>
-            <p>Deskripsi proyek2</p>
-        </td>
-        <td align="center">
-            <img src="https://via.placeholder.com/150" alt="project 3"><br>
-            <h3>Project 3</h3>
-            <p>Desripdi proyek 3</p>
-        </td>
-    </tr>
-</table>
-
+<section class="portfolio-section">
+    <h2>Portofolio</h2>
+    <div class="grid-portfolio">
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Project 1">
+            <h3>Proyek 1</h3>
+            <p>Deskripsi proyek 1.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Project 2">
+            <h3>Proyek 2</h3>
+            <p>Deskripsi proyek 2.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Project 3">
+            <h3>Proyek 3</h3>
+            <p>Deskripsi proyek 3.</p>
+        </div>
+    </div>
+</section>
 </body>
+
+<footer class="footer">
+    &copy; 2026 Naufal Hidayat. All rights reserved.
+</footer
 </html>
